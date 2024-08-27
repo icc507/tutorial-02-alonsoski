@@ -9,6 +9,17 @@
 #		  mundo 44
 #La salida debe ser
 #         ('mundo', 44, 20, 90, 'hola', 'mundo', 44)
-t = input()
-m = input()
-print(m)
+def convertir_elemento(elemento):
+    try:
+        return int(elemento)
+    except ValueError:
+        return elemento
+
+entrada1 = input()
+entrada2 = input()
+
+t1 = tuple(convertir_elemento(x) for x in entrada1.split())
+t2 = tuple(convertir_elemento(x) for x in entrada2.split())
+resultado = t2 + t1 + t2
+
+print(resultado)
